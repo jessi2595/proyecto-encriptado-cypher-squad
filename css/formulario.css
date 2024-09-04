@@ -1,0 +1,105 @@
+form {
+    max-width: 300px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+
+body{
+text-align: center;
+margin-top: 140px;
+font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    background-color: #f6a8d1;
+}
+
+.select{
+    background-color: aliceblue;
+    margin-left: 505px;
+    margin-right: 505px;
+}
+
+
+
+ /* Oculta el botón de radio original */
+ #access-from input[type="radio"] {
+    display: none;
+}
+
+/* Estilo para el contenedor del botón de radio */
+#access-from label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    position: relative;
+    padding-left: 35px; /* Espacio para el botón de radio personalizado */
+    margin-bottom: 10px;
+    color: #0c0c0c; /* Color del texto de las etiquetas */
+}
+
+/* Estilo para el botón de radio personalizado */
+#access-from label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #000000; /* Color del botón de radio cuando no está seleccionado */
+    border: 2px solid #868282; /* Color del borde del botón de radio */
+}
+
+/* Estilo cuando el botón de radio está seleccionado */
+#access-from input[type="radio"]:checked + label::before {
+    background-color: #000000; /* Color del botón de radio cuando está seleccionado */
+    border-color: #868282; /* Color del borde del botón de radio cuando está seleccionado */
+}
+
+/* Estilo para el círculo interno cuando el botón de radio está seleccionado */
+#access-from input[type="radio"]:checked + label::after {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #f6a8d1; /* Color del círculo interno cuando está seleccionado */
+}
+
+button {
+    background-color: #f6a8d1;
+    color: #000000;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding-top:1rem;
+    padding-bottom:1rem;
+    padding-left:.75rem;
+    padding-right:.75rem;
+    border-style:solid;
+    border-width: 1px;
+    border-color: var(--color-fuente);
+    border-radius: 2rem;
+  
+  }
+  
+  button:hover {
+    background-color:var(--color-fondo);
+    color:var(--color-fuente);
+    text-decoration:none;
+  }
