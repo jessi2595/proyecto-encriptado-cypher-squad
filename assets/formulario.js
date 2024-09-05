@@ -12,9 +12,9 @@ function genero(){
         e.preventDefault();
         const gender = document.querySelector('input[name="gender"]:checked').value;
         if (gender === 'female') {
-            window.location.href = '../html/inicio.html';
+            window.location.href = 'inicio.html';
         } else if (gender === 'male') {
-            window.location.href = '../html/men-only.html';
+            window.location.href = 'men-only.html';
             
         }
     }); 
