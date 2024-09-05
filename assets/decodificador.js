@@ -15,74 +15,74 @@ const close = document.getElementById("close");
 
 //EventListeners
 /* Limit characters*/
-txtMsg.addEventListener("keyup", () =>{
+txtMsg.addEventListener("keyup", () => {
     count.innerHTML = txtMsg.value.length + "/280";
 });
 
 /* Function cipher*/
-btnCipher.addEventListener("click",()=>{
-    if(txtMsg.value == ""){
+btnCipher.addEventListener("click", () => {
+    if (txtMsg.value == "") {
         alert("Ingresa tu mensaje secreto.");
-    }else if(offset.value == ""){
+    } else if (offset.value == "") {
         alert("No olvides ingresar tu clave secreta.");
-    }else{
+    } else {
         lblMsgResult.innerHTML = "Su mensaje cifrado es ";
-        let msgResult = cipher.encode(parseInt(offset.value),txtMsg.value);
+        let msgResult = cipher.encode(parseInt(offset.value), txtMsg.value);
         txtMsgResult.innerHTML = msgResult;
         openModal();
     }
 });
 
 /*Function decipher*/
-btnDecipher.addEventListener("click",()=>{
-    if(txtMsg.value == ""){
+btnDecipher.addEventListener("click", () => {
+    if (txtMsg.value == "") {
         alert("Ingresa tu mensaje secreto.");
-    }else if(offset.value == ""){
+    } else if (offset.value == "") {
         alert("No olvides ingresar tu clave secreta.");
-    }else{
+    } else {
         lblMsgResult.innerHTML = "Su mensaje descifrado es ";
-        let msgResult = cipher.decode(parseInt(offset.value),txtMsg.value);
+        let msgResult = cipher.decode(parseInt(offset.value), txtMsg.value);
         txtMsgResult.innerHTML = msgResult;
         openModal();
     }
 });
 
 /* Copy cipher or decipher message */
-btnCopy.addEventListener("click",()=>{
+btnCopy.addEventListener("click", () => {
     txtMsgResult.select();
     document.execCommand("copy");
-    setTimeout(()=>{
+    setTimeout(() => {
         btnCopy.textContent = "¡Copiado!";
     }, 100);
 });
 
 /* Modal events*/
-close.addEventListener("click",()=>{
+close.addEventListener("click", () => {
     closeModal();
 });
 
-window.addEventListener("click",(e)=>{
-    if(e.target == modalC){
+window.addEventListener("click", (e) => {
+    if (e.target == modalC) {
         closeModal();
     }
 });
 
 /********Functions */
-function openModal(){
+function openModal() {
     modalC.classList.remove("containerClose");
     modal.classList.remove("modalClose");
 }
 
-function closeModal(){
+function closeModal() {
     modal.classList.add("modalClose");
     clearMsg();
-    setTimeout(()=>{
+    setTimeout(() => {
         btnCopy.innerHTML = "<i class='fas fa-copy'></i> Copiar";
         modalC.classList.add("containerClose");
     }, 550);
 }
 
-function clearMsg(){
+function clearMsg() {
     txtMsg.value = "";
     txtMsg.innerHTML = "";
     count.innerHTML = "0/280";
